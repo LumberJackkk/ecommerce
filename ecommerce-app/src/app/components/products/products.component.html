@@ -1,0 +1,38 @@
+<h1 class="container">{{title}}</h1>
+<br>
+
+
+
+
+<div    fxLayout="row warp"
+fxLayout.xs="column"
+fxLayoutAling="center"
+fxLayoutGap="20px">
+
+<button class="btn btn-primary my-2" routerLink="/products/form">Create</button>
+
+
+    <div    fxFlex="20"
+    fxFlex.lg="15%"
+    fxFlex.sm="30"
+    *ngFor="let product of products">
+
+
+
+        <div class="card container" style="width: 18rem;">
+            <img [src]="product.photo" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <p class="card-text">${{product.prize|number}}</p>
+              <button class="btn btn-primary btn-sm" [routerLink]="['/products/details/',product.id]">Details</button>
+              <br>
+              <button class="btn btn-success btn-sm mt-2" [routerLink]="['/products/form/',product.id]">Edit</button>
+              <br>
+              <button class="btn btn-danger btn-sm mt-2" (click)="delete(product)">Delete</button>
+            </div>
+          </div>
+
+</div>
+
+</div>

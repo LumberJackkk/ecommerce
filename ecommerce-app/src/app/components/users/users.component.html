@@ -1,0 +1,31 @@
+<div class="card bh-ligth mb-3">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/users/form">Create</button>
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>UserID</th>
+                    <th>Name</th>
+                    <th>address</th>
+                    <th>email</th>
+                    <th>cellNumber</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.address}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.cellNumber}}</td>
+                    <td><button class="btn btn-success btn-sm" [routerLink]="['/users/form/',user.id]">Edit</button></td>
+                    <td><button class="btn btn-danger btn-sm" (click)="delete(user)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

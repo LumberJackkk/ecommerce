@@ -1,0 +1,16 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="product.photo" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text">${{product.prize|number}}</p>
+          <input type="number" *ngIf="product.quantity!=null" [value]="orderQuantity">
+        </div>
+        <button class="btn btn-success btn-sm mt-2" [routerLink]="['/shopping']">Add to shopping cart</button>
+      </div>
+    </div>
+  </div>

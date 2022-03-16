@@ -1,0 +1,41 @@
+<div class="card bh-ligth mb-3">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+        <button class="btn btn-secondary my-2" routerLink="/users">Exit</button>
+
+        <form action="">
+            <div class="form-group col-4">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" [(ngModel)]="user.name">
+                <div class="alert alert-danger" *ngIf="error && error.name"> {{error.name}}</div>
+            </div>
+            <div class="form-group col-4">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" [(ngModel)]="user.userName">
+                <div class="alert alert-danger" *ngIf="error && error.userName">{{error.userName}}</div>
+            </div>
+            <div class="form-group col-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" [(ngModel)]="user.password">
+                <div class="alert alert-danger" *ngIf="error && error.password"> {{error.password}}</div>
+            </div>
+            <div class="form-group col-4">
+                <label for="email">email</label>
+                <input type="email" name="email" class="form-control" [(ngModel)]="user.email">
+                <div class="alert alert-danger" *ngIf="error && error.email"> {{error.email}}</div>
+            </div>
+            <div class="form-group col-4">
+                <label for="Address">Address</label>
+                <input type="text" name="Address" class="form-control" [(ngModel)]="user.address">
+                <div class="alert alert-danger" *ngIf="error && error.name"> {{error.address}}</div>
+            </div>
+            <div class="form-group col-4">
+                <label for="cell">Cell number</label>
+                <input type="number" name="cell" class="form-control" [(ngModel)]="user.cellNumber">
+                <div class="alert alert-danger" *ngIf="error && error.cellNumber"> {{error.cellNumber}}</div>
+            </div>
+            <button *ngIf="user.id ==null" class="btn btn-primary my-2" type="button" (click)="create()">Create</button>
+            <button *ngIf="user.id !=null" class="btn btn-success my-2" type="button" (click)="edit()">Edit</button>
+        </form>
+    </div>
+</div>
